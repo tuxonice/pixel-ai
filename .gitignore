@@ -1,0 +1,6 @@
+/htdocs/vendor
+/.idea
+/htdocs/.env
+/htdocs/node_modules
+htdocs/pixel-ai.geany
+

@@ -17,15 +17,14 @@ $router->get('/', function () use ($router) {
 
 $router->post('/reversi/random', 'ReversiController@playRandom');
 $router->post('/reversi/maxscore', 'ReversiController@playMaxScore');
-$router->get('/dev', 'ReversiController@dev');
 
 $router->options('/reversi/random', function() {
 
     return response(json_encode([
-        'methods-allowed' => ['POST', 'GET', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+        'methods-allowed' => ['POST', 'GET', 'OPTIONS'],
     ]), 200)
         ->header('Access-Control-Allow-Headers', '*')
-        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+        ->header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
 
 });
 
@@ -33,9 +32,9 @@ $router->options('/reversi/random', function() {
 $router->options('/reversi/maxscore', function() {
 
     return response(json_encode([
-        'methods-allowed' => ['POST', 'GET', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+        'methods-allowed' => ['POST', 'GET', 'OPTIONS'],
     ]), 200)
         ->header('Access-Control-Allow-Headers', '*')
-        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+        ->header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
 
 });

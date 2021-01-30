@@ -32,26 +32,4 @@ class ReversiController extends Controller
         return response()->json($game->playMaxScorePosition());
     }
     
-    
-    
-    public function dev()
-    {
-        $testBoard = [
-            ['', '', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', '', ''],
-            ['', 'w', '', '', '', '', '', ''],
-            ['', 'w', 'w', 'w', 'b', '', '', ''],
-            ['', 'w', '', 'b', 'w', '', '', ''],
-            ['', 'w', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', '', ''],
-        ];
-
-        $playerSymbol = 'b';
-        $opponentSymbol = 'w';
-
-        $game = new Reversi($testBoard, $playerSymbol, $opponentSymbol);
-        dump($game->playMaxScorePosition());    
-    }
-    
 }
